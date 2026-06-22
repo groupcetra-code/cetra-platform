@@ -67,11 +67,11 @@ export default function Navigation() {
             </>
           ) : (
             <>
-              <Link href="/login" className="text-sm text-slate-300 transition hover:text-white">
-                Login
+              <Link href="/Creators" className="text-sm text-slate-300 hover:text-white">
+              Join as Creator
               </Link>
-              <Link href="/register" className="btn btn-primary">
-                Register
+              <Link href="/request" className="btn btn-primary">
+                Join as Brand
               </Link>
             </>
           )}
