@@ -1,0 +1,35 @@
+
+> cetra-platform@0.1.0 build
+> next build
+
+▲ Next.js 16.2.9 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 19.3s
+  Running TypeScript ...
+  Finished TypeScript in 14.3s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/13) ...
+  Generating static pages using 3 workers (3/13) 
+  Generating static pages using 3 workers (6/13) 
+  Generating static pages using 3 workers (9/13) 
+✓ Generating static pages using 3 workers (13/13) in 1734ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /admin-dashboard
+├ ○ /Brands
+├ ○ /creator-directory
+├ ○ /creator-profile
+├ ○ /Creators
+├ ○ /dashboard
+├ ○ /login
+├ ○ /register
+└ ○ /request
+
+
+○  (Static)  prerendered as static content
+

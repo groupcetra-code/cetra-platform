@@ -1,0 +1,15 @@
+# This file specifies files that are *not* uploaded to Google Cloud.
+# See https://cloud.google.com/sdk/gcloud/reference/topic/gcloudignore
+
+node_modules/
+.nyc_output/
+coverage/
+**/.git
+**/.svn
+**/.hg
+**/.DS_Store
+*.log
+.env*
+.DS_Store
+next-env.d.ts
+.vscode/

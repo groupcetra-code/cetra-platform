@@ -1,0 +1,26 @@
+steps:
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['ci']
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/cetra-platform', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/cetra-platform']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-lc'
+      - |-
+        gcloud run deploy ${_SERVICE_NAME} \
+          --image gcr.io/$PROJECT_ID/${_SERVICE_NAME} \
+          --platform managed \
+          --region=${_REGION} \
+          --allow-unauthenticated \
+          --set-env-vars NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL},NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+substitutions:
+  _REGION: us-central1
+  _SERVICE_NAME: cetra-platform
+images:
+  - 'gcr.io/$PROJECT_ID/cetra-platform'
+timeout: '1200s'
